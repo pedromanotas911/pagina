@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home Mycelaceus - Drone &amp; VR Tours</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "pastel-green": "#e2efda",
+                        "pastel-yellow": "#fdfbd4",
+                        "primary-green": "#86a789",
+                        "soft-text": "#4a5d4c",
+                        "background-light": "#fafbf6",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #fafbf6;
+            color: #4a5d4c;
+        }
+        .glass-nav {
+            background: rgba(250, 251, 246, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(226, 239, 218, 0.9) 0%, rgba(226, 239, 218, 0.6) 50%, rgba(226, 239, 218, 0.2) 100%);
+        }
+        .hover-glow:hover {
+            box-shadow: 0 10px 30px rgba(134, 167, 137, 0.15);
+            border-color: #86a789;
+        }
+        #contact-modal:target {
+            display: flex;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-pastel-green">
+    <nav class="fixed top-0 w-full z-50 border-b border-pastel-green/50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="size-10 bg-primary-green rounded-lg flex items-center justify-center text-white shadow-sm">
+                    <span class="material-symbols-outlined text-2xl">precision_manufacturing</span>
+                </div>
+                <h1 class="text-2xl font-bold tracking-tight text-soft-text">Mycelaceus</h1>
+            </div>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-semibold text-primary-green" href="#">Inicio</a>
+                <a class="text-sm font-medium text-soft-text/70 hover:text-primary-green transition-colors"
+                    href="#">Servicios</a>
+                <a class="text-sm font-medium text-soft-text/70 hover:text-primary-green transition-colors"
+                    href="#">Galería</a>
+                <a class="text-sm font-medium text-soft-text/70 hover:text-primary-green transition-colors"
+                    href="#contact-modal">Contacto</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a class="hidden sm:flex items-center gap-2 px-6 py-2.5 bg-primary-green hover:bg-primary-green/90 text-white text-sm font-bold rounded-full transition-all active:scale-95"
+                    href="#contact-modal">
+                    Cotizar
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+                <button class="md:hidden text-soft-text">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-20">
+        <section class="relative h-[85vh] w-full overflow-hidden bg-pastel-yellow/30">
+            <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://lh3.googleusercontent.com/d/1hcWfMllj5l7FOCtqanRrT5imbCaXEg3p=s7000');">
+                <div class="absolute inset-0 hero-gradient"></div>
+            </div>
+            <div
+                class="relative h-full max-w-7xl mx-auto px-6 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="max-w-2xl mt-20 lg:mt-0">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-pastel-green text-primary-green text-xs font-bold uppercase tracking-widest mb-6">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-green opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-green"></span>
+                        </span>
+                        Producción 4K &amp; Inmersiva
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold text-soft-text leading-[1.1] tracking-tighter mb-6">
+                        Perspectivas que <span class="text-primary-green italic">inspiran.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-soft-text/80 font-light leading-relaxed max-w-xl mb-10">
+                        Elevamos tu visión con cinematografía aérea de alta precisión y recorridos virtuales 360° en una
+                        atmósfera orgánica y profesional.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="flex items-center gap-3 px-8 py-4 bg-primary-green text-white font-bold rounded-full hover:shadow-lg transition-all group">
+                            Nuestros Trabajos
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform">play_arrow</span>
+                        </button>
+                        <button
+                            class="flex items-center gap-3 px-8 py-4 bg-white border border-pastel-green text-soft-text font-bold rounded-full hover:bg-pastel-yellow/50 transition-all">
+                            Ver Tour Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="relative hidden lg:block group">
+                    <div
+                        class="absolute -inset-4 bg-pastel-green/40 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div
+                        class="relative w-80 h-80 rounded-full border-2 border-pastel-green/50 flex items-center justify-center p-8 bg-white/60 backdrop-blur-sm shadow-xl overflow-hidden">
+                        <div class="text-center z-10">
+                            <span class="material-symbols-outlined text-6xl text-primary-green mb-4 block">360</span>
+                            <h3 class="text-xl font-bold text-soft-text mb-2">Explorar Tour 360</h3>
+                            <p class="text-sm text-soft-text/60 mb-6">Inmersión completa</p>
+                            <button
+                                class="w-12 h-12 bg-primary-green rounded-full flex items-center justify-center text-white shadow-lg shadow-primary-green/40 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined">explore</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 w-full bg-white/40 border-t border-pastel-green/30 backdrop-blur-md">
+                <div
+                    class="max-w-7xl mx-auto px-10 py-6 flex justify-between items-center overflow-x-auto no-scrollbar gap-8">
+                    <div class="flex items-center gap-4 min-w-max border-r border-pastel-green/30 pr-8">
+                        <span class="text-primary-green font-bold text-2xl">500+</span>
+                        <span class="text-xs uppercase tracking-widest text-soft-text/60 font-medium">Proyectos
+                            <br />Completados</span>
+                    </div>
+                    <div class="flex items-center gap-4 min-w-max border-r border-pastel-green/30 pr-8">
+                        <span class="text-primary-green font-bold text-2xl">4K</span>
+                        <span class="text-xs uppercase tracking-widest text-soft-text/60 font-medium">Calidad de
+                            <br />Grabación</span>
+                    </div>
+                    <div class="flex items-center gap-4 min-w-max border-r border-pastel-green/30 pr-8">
+                        <span class="text-primary-green font-bold text-2xl">360°</span>
+                        <span class="text-xs uppercase tracking-widest text-soft-text/60 font-medium">Experiencia
+                            <br />Inmersiva</span>
+                    </div>
+                    <div class="flex items-center gap-4 min-w-max">
+                        <span class="text-primary-green font-bold text-2xl">100%</span>
+                        <span class="text-xs uppercase tracking-widest text-soft-text/60 font-medium">Satisfacción
+                            <br />Garantizada</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-24 px-6 lg:px-10 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+                <div>
+                    <h2 class="text-4xl font-bold text-soft-text tracking-tight mb-4">Galería de Proyectos</h2>
+                    <p class="text-soft-text/60 max-w-md">Explora nuestra colección de tomas aéreas y recorridos
+                        inmersivos diseñados con una estética limpia y natural.</p>
+                </div>
+                <div class="flex bg-pastel-green/20 p-1.5 rounded-full border border-pastel-green/30">
+                    <button
+                        class="px-6 py-2 bg-primary-green text-white text-sm font-bold rounded-full shadow-sm">Cinematografía</button>
+                    <button
+                        class="px-6 py-2 text-soft-text/60 text-sm font-bold rounded-full hover:text-primary-green transition-colors">VR
+                        360°</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="group relative aspect-video rounded-2xl overflow-hidden bg-pastel-green/10 hover-glow transition-all duration-300 border border-pastel-green/20">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn2LkOJl3-k4vOrSJ5w1qPFEyadOGvQV84FO1fWjj4HGQ8cy_Oc5zrdrAOG8j8HVP605XKvKMyMhOSx-hkds2Z2gzHH10rXUWaTJILRTL2wds36mGnmjBSxsS2unw1MTSCvqadNBCv1xnckvOJ7TRcs54beSqR4keaR7PJHMGeE8l4y6ZdY14M1sjRPuWTndWvvObUq6dynL3PgSma45_ugktCb49DNWdPIEMLukADGZ-t0bZ_jtLtNVHqQdX6DORpQXiOfCCn5GjF" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-soft-text/60 via-transparent to-transparent">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div
+                            class="size-16 bg-white/90 rounded-full flex items-center justify-center text-primary-green scale-75 group-hover:scale-100 transition-transform shadow-lg">
+                            <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <p class="text-xs font-bold text-pastel-yellow uppercase tracking-widest mb-1">Inmobiliaria</p>
+                        <h3 class="text-xl font-bold text-white">Residencial de Lujo</h3>
+                    </div>
+                </div>
+                <div
+                    class="group relative aspect-video rounded-2xl overflow-hidden bg-pastel-green/10 hover-glow transition-all duration-300 border border-pastel-green/20">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3bEHFUbdIbuG3krj9XS3vGfuTmGGjkHcocFX4ML2lSB7j80deA0VtCWPFgpDfc8yKh3hURxnHeTJ604VK74dOSfurEQ3u4RqUJQhr4OWXuE3rTSVe9wbsysrTUmCLbbFN1piKbPVVs3g4t6P75qryAjGv_TrlpBpt-t7an3rn40yB-eo9TmW3q2XBY8AN26-XV-a2YPMlAtK5aNO82xf3pC3rBnCcgPZ_sjaHm_5xe8V12nkhccWLeTL5m3t9RnbfF9QQVJ-lG2Iv" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-soft-text/60 via-transparent to-transparent">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div
+                            class="size-16 bg-white/90 rounded-full flex items-center justify-center text-primary-green scale-75 group-hover:scale-100 transition-transform shadow-lg">
+                            <span class="material-symbols-outlined text-3xl">360</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <p class="text-xs font-bold text-pastel-yellow uppercase tracking-widest mb-1">Turismo</p>
+                        <h3 class="text-xl font-bold text-white">Vista Urbana 4K</h3>
+                    </div>
+                </div>
+                <div
+                    class="group relative aspect-video rounded-2xl overflow-hidden bg-pastel-green/10 hover-glow transition-all duration-300 border border-pastel-green/20">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuASW-H9f2bwQNFHcKj3PI6ZuzVuZrX8VBnUyNs48QMpniwcBzjJXOi_77KUVhS8c8PzZ7yQ1DJ687SHF7wDOYzAo6C-nSJaUxdgKHUWzHaBRpq15LrRRJbP_aCmEXf8-fdUFVzEavlXibWXtlsbu065tligWbBCFGo4e9CuK8nhrEkQq5rvwpV4uM7sRb8CR66jMNOtH_IkD7H3T1Sam97AUu698yskvSkLrgPVuXwXuCycjjD39LJrTE40ZxALB4pdI-jzTfYG40rn" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-soft-text/60 via-transparent to-transparent">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div
+                            class="size-16 bg-white/90 rounded-full flex items-center justify-center text-primary-green scale-75 group-hover:scale-100 transition-transform shadow-lg">
+                            <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <p class="text-xs font-bold text-pastel-yellow uppercase tracking-widest mb-1">Corporativo</p>
+                        <h3 class="text-xl font-bold text-white">Evento Sede Central</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <button
+                    class="px-10 py-4 border-2 border-pastel-green hover:border-primary-green text-soft-text font-bold rounded-full transition-all hover:bg-pastel-green/20">
+                    Cargar más proyectos
+                </button>
+            </div>
+        </section>
+        <section class="py-24 bg-pastel-yellow/20 border-y border-pastel-green/30">
+            <div class="max-w-7xl mx-auto px-6 lg:px-10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="flex flex-col gap-6 p-8 bg-white/60 rounded-2xl border border-white/80">
+                        <div class="size-14 bg-pastel-green rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary-green text-3xl">flight_takeoff</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-soft-text">Drones de Alta Gama</h3>
+                        <p class="text-soft-text/70 leading-relaxed">Utilizamos equipos de última generación para
+                            capturar video en 4K y 6K con estabilidad cinematográfica perfecta.</p>
+                    </div>
+                    <div class="flex flex-col gap-6 p-8 bg-white/60 rounded-2xl border border-white/80">
+                        <div class="size-14 bg-pastel-green rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary-green text-3xl">vrpano</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-soft-text">Inmersión 360°</h3>
+                        <p class="text-soft-text/70 leading-relaxed">Creamos tours virtuales interactivos que permiten a
+                            tus clientes explorar espacios desde cualquier parte del mundo.</p>
+                    </div>
+                    <div class="flex flex-col gap-6 p-8 bg-white/60 rounded-2xl border border-white/80">
+                        <div class="size-14 bg-pastel-green rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary-green text-3xl">speed</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-soft-text">Entrega Rápida</h3>
+                        <p class="text-soft-text/70 leading-relaxed">Flujo de trabajo optimizado que nos permite
+                            entregar material editado y listo para publicar en tiempo récord.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-24 px-6 lg:px-10 max-w-7xl mx-auto">
+            <div
+                class="relative bg-primary-green rounded-[3rem] p-12 lg:p-20 overflow-hidden shadow-2xl shadow-primary-green/20">
+                <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+                    <span
+                        class="material-symbols-outlined text-[20rem] absolute -top-10 -right-10 text-white">precision_manufacturing</span>
+                </div>
+                <div class="relative z-10 max-w-2xl">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">¿Listo para elevar tu proyecto?</h2>
+                    <p class="text-white/90 text-lg mb-10">Solicita una cotización personalizada hoy mismo y descubre
+                        cómo podemos ayudarte a destacar con visuales de impacto.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a class="px-8 py-4 bg-white text-primary-green font-bold rounded-full hover:bg-pastel-yellow transition-all shadow-xl"
+                            href="#contact-modal">
+                            Solicitar Cotización
+                        </a>
+                        <a class="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/30 font-bold rounded-full hover:bg-white/20 transition-all"
+                            href="#contact-modal">
+                            Contáctanos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="fixed inset-0 z-[100] hidden items-center justify-center bg-soft-text/30 backdrop-blur-md px-4"
+        id="contact-modal">
+        <div
+            class="relative w-full max-w-4xl bg-white border border-pastel-green/30 rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row">
+            <a class="absolute top-6 right-6 size-10 flex items-center justify-center rounded-full bg-pastel-green/20 text-soft-text hover:bg-pastel-green/40 transition-all z-20"
+                href="#">
+                <span class="material-symbols-outlined">close</span>
+            </a>
+            <div class="w-full md:w-5/12 p-8 md:p-12 bg-pastel-green/30">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="size-8 bg-primary-green rounded flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-xl">precision_manufacturing</span>
+                    </div>
+                    <h2 class="text-lg font-bold text-soft-text">Mycelaceus</h2>
+                </div>
+                <h3 class="text-3xl font-bold text-soft-text mb-6">Hablemos de tu próximo proyecto</h3>
+                <p class="text-soft-text/70 mb-10">Estamos listos para capturar tu visión desde los ángulos más
+                    impactantes.</p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 group">
+                        <div
+                            class="size-12 rounded-2xl bg-white border border-pastel-green flex items-center justify-center text-primary-green group-hover:scale-105 transition-transform shadow-sm">
+                            <span class="material-symbols-outlined">call</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-soft-text/50 uppercase tracking-widest">Llámanos</p>
+                            <p class="text-soft-text font-semibold">3517476118</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div
+                            class="size-12 rounded-2xl bg-white border border-pastel-green flex items-center justify-center text-primary-green group-hover:scale-105 transition-transform shadow-sm">
+                            <span class="material-symbols-outlined">mail</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-soft-text/50 uppercase tracking-widest">Escríbenos</p>
+                            <p class="text-soft-text font-semibold">pedronavarro911@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-7/12 p-8 md:p-12">
+                <form action="#" class="space-y-6" method="POST">
+                    <div>
+                        <label class="block text-xs font-bold text-soft-text/60 uppercase tracking-widest mb-2"
+                            for="nombre">Nombre</label>
+                        <input
+                            class="w-full bg-pastel-green/10 border border-pastel-green/50 rounded-xl px-4 py-3 text-soft-text placeholder-soft-text/30 focus:outline-none focus:border-primary-green focus:ring-1 focus:ring-primary-green transition-all"
+                            id="nombre" placeholder="Tu nombre completo" required="" type="text" />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-soft-text/60 uppercase tracking-widest mb-2"
+                            for="asunto">Asunto</label>
+                        <input
+                            class="w-full bg-pastel-green/10 border border-pastel-green/50 rounded-xl px-4 py-3 text-soft-text placeholder-soft-text/30 focus:outline-none focus:border-primary-green focus:ring-1 focus:ring-primary-green transition-all"
+                            id="asunto" placeholder="¿En qué podemos ayudarte?" required="" type="text" />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-soft-text/60 uppercase tracking-widest mb-2"
+                            for="mensaje">Mensaje</label>
+                        <textarea
+                            class="w-full bg-pastel-green/10 border border-pastel-green/50 rounded-xl px-4 py-3 text-soft-text placeholder-soft-text/30 focus:outline-none focus:border-primary-green focus:ring-1 focus:ring-primary-green transition-all min-h-[120px]"
+                            id="mensaje" placeholder="Describe brevemente tu idea..." required=""></textarea>
+                    </div>
+                    <button
+                        class="w-full py-4 bg-primary-green hover:bg-primary-green/90 text-white font-bold rounded-xl shadow-lg shadow-primary-green/20 transition-all active:scale-[0.98]"
+                        type="submit">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-white py-16 border-t border-pastel-green/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="size-8 bg-primary-green rounded flex items-center justify-center text-white">
+                            <span class="material-symbols-outlined text-xl">precision_manufacturing</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-soft-text">Mycelaceus</h2>
+                    </div>
+                    <p class="text-soft-text/60 text-sm leading-relaxed">Expertos en captura aérea y experiencias de
+                        realidad virtual con un toque orgánico y profesional.</p>
+                </div>
+                <div>
+                    <h4 class="text-soft-text font-bold mb-6">Explorar</h4>
+                    <ul class="space-y-4 text-sm text-soft-text/60">
+                        <li><a class="hover:text-primary-green transition-colors" href="#">Portafolio</a></li>
+                        <li><a class="hover:text-primary-green transition-colors" href="#">Servicios Drone</a></li>
+                        <li><a class="hover:text-primary-green transition-colors" href="#">Tours Virtuales</a></li>
+                        <li><a class="hover:text-primary-green transition-colors" href="#">Precios</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-soft-text font-bold mb-6">Empresa</h4>
+                    <ul class="space-y-4 text-sm text-soft-text/60">
+                        <li><a class="hover:text-primary-green transition-colors" href="#">Sobre Nosotros</a></li>
+                        <li><a class="hover:text-primary-green transition-colors" href="#">Blog</a></li>
+                        <li><a class="hover:text-primary-green transition-colors" href="#">Privacidad</a></li>
+                        <li><a class="hover:text-primary-green transition-colors" href="#">Términos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-soft-text font-bold mb-6">Síguenos</h4>
+                    <div class="flex gap-4">
+                        <a class="size-10 bg-pastel-green/20 rounded-xl flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-white transition-all shadow-sm"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">camera</span>
+                        </a>
+                        <a class="size-10 bg-pastel-green/20 rounded-xl flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-white transition-all shadow-sm"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">smart_display</span>
+                        </a>
+                        <a class="size-10 bg-pastel-green/20 rounded-xl flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-white transition-all shadow-sm"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">alternate_email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-pastel-green/30 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-soft-text/40 font-bold uppercase tracking-widest">
+                <p>© 2024 MYCELACEUS PRODUCTIONS. TODOS LOS DERECHOS RESERVADOS.</p>
+                <div class="flex gap-8">
+                    <a class="hover:text-primary-green transition-colors" href="#">Estética</a>
+                    <a class="hover:text-primary-green transition-colors" href="#">Inspiración</a>
+                    <a class="hover:text-primary-green transition-colors" href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
